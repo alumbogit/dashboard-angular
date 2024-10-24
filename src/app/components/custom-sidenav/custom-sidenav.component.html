@@ -1,0 +1,20 @@
+<div class="sidenav-header">
+    <img src="/img/temoin02.jpg" 
+    [width]="profilePicSize()" 
+    [height]="profilePicSize()" alt="">
+    <div class="header-text" [class.hide-header-text]="sidenavCollapsed()">
+        <h2> Your channel</h2>
+        <p>your name</p>
+    </div>
+</div>
+<mat-nav-list>
+    <mat-list-item *ngFor="let item of menuItem()" 
+    class="menu-item"
+    [routerLink]="item.route" 
+    routerLinkActive="selected-menu-item"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive">
+        <mat-icon matListItemIcon >{{item.icon}}</mat-icon>
+        <span matListItemTitle *ngIf="!sidenavCollapsed()" > {{item.label}} </span>
+    </mat-list-item>
+</mat-nav-list>

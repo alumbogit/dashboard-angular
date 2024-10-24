@@ -1,0 +1,30 @@
+.global{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 2px;
+    .container {
+        box-sizing: border-box;
+        max-width: calc(100% / 4 - 10px);
+        max-height: calc(100% - 1.5rem);
+        background: linear-gradient(to right, blue, rgb(248, 109, 109));
+        padding: .75rem 5px;
+        border-radius: 8px;
+        box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.527);
+        color: white;
+        cursor: pointer;
+        transition: transform 0.5s ease-in-out; /* Ajout d'une transition pour l'effet de scale */
+      
+        &:hover {
+          transform: scale(1.05); /* Agrandissement au survol */
+        }
+      
+        .header-container {
+          text-align: center;
+          font-size: larger;
+          padding: 1rem 0.4rem;
+        }
+      }
+}
